@@ -73,8 +73,8 @@ cover:
 dream:
   enable: true
   showTitle: true
-  title: 高翔龙(九叔)
-  text: 「同程旅行」技术总监，前「支付宝」高级技术专家，GIAC、ArchSummit峰会讲师，著有畅销书《超大流量分布式系统架构解决方案》、《人人都是架构师》、《Java虚拟机精讲》
+  title: What am I doing?
+  text: 目前执着于研究生物"意识"是如何产生的，并试图理解感知、自我，以及主观体验等现象是如何从神经元之间的电化学活动中涌现出来的。这不仅是神经科学与哲学的交叉核心问题，也可能是人类通往"真正人工智能"的关键路径
 
 # Whether to display the musics.
 # 是否在首页显示音乐.
