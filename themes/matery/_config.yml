@@ -74,7 +74,7 @@ dream:
   enable: true
   showTitle: true
   title: 高翔龙(九叔)
-  text: 「同程旅行」技术总监，前「支付宝」高级专家，GIAC、ArchSummit峰会讲师，著有畅销书《超大流量分布式系统架构解决方案》、《人人都是架构师》、《Java虚拟机精讲》
+  text: 「同程旅行」技术总监，前「支付宝」高级技术专家，GIAC、ArchSummit峰会讲师，著有畅销书《超大流量分布式系统架构解决方案》、《人人都是架构师》、《Java虚拟机精讲》
 
 # Whether to display the musics.
 # 是否在首页显示音乐.
@@ -255,8 +255,8 @@ snowdown:
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
   avatar: /medias/avatar.jpg
-  career: Software Engineer
-  introduction: If you wish to succeed, you should use persistence as your good friend, experience as your reference, prudence as your brother and hope as your sentry.
+  career: Senior Technical Expert
+  introduction: 「同程旅行」技术总监，前「支付宝」高级技术专家，GIAC、ArchSummit峰会讲师，著有畅销书《超大流量分布式系统架构解决方案》、《人人都是架构师》、《Java虚拟机精讲》
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
