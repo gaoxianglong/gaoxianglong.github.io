@@ -1,0 +1,1138 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="为啥蒙娜丽莎让LLM无法识别, GXLverse">
+    <meta name="description" content="
+前言我们能够从这样一张被严重干扰、图像信息高度残缺的图中识别出“蒙娜丽莎”，并不是因为我们依赖像素级别的图像细节，而是因为大脑视觉系统具备高度层次化、交互式的信息加工机制。视觉信息首先在初级视觉皮层(V1区)中被处理为边缘、方向、空间频率">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>为啥蒙娜丽莎让LLM无法识别 | GXLverse</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">GXLverse</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">GXLverse</div>
+        <div class="logo-desc">
+            
+            「同程旅行」技术总监，前「支付宝」高级技术专家，GIAC、ArchSummit峰会讲师，著有畅销书《超大流量分布式系统架构解决方案》、《人人都是架构师》、《Java虚拟机精讲》。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/gaoxianglong" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/gaoxianglong" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">为啥蒙娜丽莎让LLM无法识别</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%A5%9E%E7%BB%8F%E5%85%83/">
+                                <span class="chip bg-color">神经元</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%A7%86%E7%BD%91%E8%86%9C/">
+                                <span class="chip bg-color">视网膜</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                                <span class="chip bg-color">神经网络</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%94%9F%E7%89%A9%E5%AD%A6/" class="post-category">
+                                神经生物学
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2025-06-03
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    7.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    24 Min
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><img src="https://github.com/gaoxianglong/blog/blob/master/imgs/%E6%88%AA%E5%B1%8F2025-07-08%2023.18.52.png?raw=true"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><span style="color:green">前言</span></h2><p>我们能够从这样一张被严重干扰、图像信息高度残缺的图中识别出“蒙娜丽莎”，并不是因为我们依赖像素级别的图像细节，而是因为大脑视觉系统具备高度层次化、交互式的信息加工机制。视觉信息首先在初级视觉皮层(V1区)中被处理为边缘、方向、空间频率等低级特征，然后这些初级特征被逐步整合至中高级视觉区域，在这里，大脑不仅识别出局部形状与颜色模式，还能基于过往经验构建整体结构的认知模板。例如，当大脑检测到类似人脸对称分布的亮暗交替、眼鼻嘴的大致位置、甚至某些典型的艺术构图比例时，它会迅速激活与人脸或蒙娜丽莎相关的记忆表征。<br><br>更关键的是，人类视觉系统是自底向上（bottom-up）与自顶向下（top-down）双向交互的。<span style="color:purple"><strong>来自视网膜的信息不断向上传递，但同时，大脑的高级区域（前额叶皮层、顶叶）也会基于上下文、期望、语言标签等信息反向调控视觉皮层的活动。这种预测-校验模型（predictive coding）使得我们在面对模糊或不完整刺激时，能够预测图像内容，并对残缺信息进行补全，进而识别出其中的语义目标</strong></span>。<br><img src="https://github.com/gaoxianglong/blog/blob/master/imgs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-07-08_230718_182.jpg?raw=true"><br>相比之下，现有的AI视觉模型无论是卷积神经网络（CNN）还是视觉Transformer（ViT）虽然在标准图像识别任务中表现出色，<span style="color:purple"><strong>但它们的处理过程依然主要是从像素特征中逐层提取统计模式，缺乏真正的上下文理解、模态记忆唤起与结构性补全机制</strong></span>。也就是说，AI在识别时是独立处理的，不具备像人类那样调动”这是画”、”这是著名头像”、”这可能是蒙娜丽莎”这些跨层知识结构的能力。因此，当图像遭到严重扰动，表层像素统计特征失真时，AI往往无法从中恢复高层语义，而人类则依赖认知结构和经验推理，实现”看见”本质。<br></p>
+<p>我们看到的世界，实际上并不是眼睛直接显示的图像，而是经过一套高度复杂的神经通路进行加工和解释后，由大脑视觉皮层重构的结果。这一进程以光线进入眼睛为起点，最终在大脑中形成有意义的图像。</p>
+<h2 id="光转神经信号"><a href="#光转神经信号" class="headerlink" title="光转神经信号"></a><span style="color:green">光转神经信号</span></h2><p>光线从外部世界进入眼睛，穿过角膜、晶状体等结构后，会聚焦在眼球后部的视网膜上，视网膜中的感光细胞在物理结构上位于最深层，光线在抵达这些感光单元前，需先穿透多层神经细胞层，包括神经节细胞、双极细胞、无长突细胞与水平细胞等。这意味着，<span style="color:purple"><strong>光线的入射路径与神经信号的传导路径方向完全相反。当光线进入眼内后，会以物理方式依次穿过这些非感光神经层，最终到达位于最内侧、贴近色素上皮层的感光细胞。这一过程不涉及任何神经递质或电信号，仅为单纯的光学穿透。而真正的信息处理始于光激活感光细胞后产生的电位变化，随后通过神经递质传递至双极细胞，经由水平细胞与无长突细胞的调控，在双极细胞与神经节细胞之间完成信号传递</strong></span>。神经节细胞的轴突末梢聚合形成视神经，将处理后的信号经丘脑（负责参与意识维持、注意调节、运动计划等高级神经功能）投射至大脑视觉皮层，最终完成视觉感知，如图1所示。<br><img src="https://github.com/gaoxianglong/blog/blob/master/imgs/%E6%88%AA%E5%B1%8F2025-06-03%2023.53.35.png?raw=true" alt="图1-视网膜结构"><br>从信息流动的视角来看，感光细胞是视觉通路中的起点，而神经节细胞及其轴突所组成的视神经，是通向中枢神经系统的输出路径。两者之间虽然在空间结构上呈纵深分布，但在功能逻辑上仍体现出由周边感知向中枢集成的单向通路特征。这一结构安排表面上似乎不具效率优势，特别是在中央凹以外区域，光线需穿透的组织较多，理论上可能造成信号衰减。然而，<span style="color:purple"><strong>视网膜的组织具有高度透明性</strong></span>，中央凹区域更是通过移位机制使上层神经元让位于侧方，使得感光细胞可直接暴露于入射光之下，优化了成像质量。</p>
+<h2 id="视神经通路：从眼睛到大脑的路线图"><a href="#视神经通路：从眼睛到大脑的路线图" class="headerlink" title="视神经通路：从眼睛到大脑的路线图"></a><span style="color:green">视神经通路：从眼睛到大脑的路线图</span></h2><p><span style="color:purple"><strong>多个神经节细胞的轴突并排组成了视神经纤维束，这些轴突在解剖结构上依次穿过视神经、视交叉和视束（交叉后的神经束，向 LGN 传输整合后的视觉信息），三者实际上是同一组轴突在不同位置的称谓。</strong></span>视网膜上的节细胞会将处理过的视觉信号汇总成视神经信号。每只眼睛输出一条视神经，这些信号进入大脑前会在视交叉（optic chiasm）处交叉，简单来说，<span style="color:purple"><strong>大脑左半球（左侧视皮层）负责处理我们双眼右侧的视野，大脑右半球（右侧视皮层）处理左侧的视野。</strong></span> 交叉之后，信号被送入丘脑中的一个重要中继站——外侧膝状体（LGN）。在灵长类动物（如人或猴子）中，LGN分为6层：1-2层是M型细胞主导，处理运动、亮度和大致结构信息；3-6层是P型细胞主导，处理颜色和精细图像。这些信号在LGN中被进一步加工和分类，然后通过视放射投送到V1。<br><br>当动作电位沿这些轴突传导至其轴突末梢时，末梢在LGN区域与LGN神经元的树突构成突触结构。此处的突触前膜释放谷氨酸等兴奋性神经递质，作用于突触后膜上的受体，引发LGN神经元膜电位变化，进而触发新的动作电位。该信号随后将被进一步传输至V1，完成视觉信号的第一轮中继加工。<br><br>V1接收到来自LGN的信号后，会根据空间位置、方向、亮度变化等要素进一步分析视觉信息。此时的神经元不仅仅是接受输入，它们会选择性地响应特定的图像特征，比如：边缘、线条、颜色对比等。信息沿着背侧通路和腹侧通路继续往更高级的视觉区域传递。前者负责处理运动和空间位置，后者则处理颜色、形状和物体识别。这种逐层抽象的方式，使我们最终不仅能看到物体，还能识别出这是一个在移动的红色小球。</p>
+<h2 id="神经节细胞与LGN的感受野结构与功能"><a href="#神经节细胞与LGN的感受野结构与功能" class="headerlink" title="神经节细胞与LGN的感受野结构与功能"></a><span style="color:green">神经节细胞与LGN的感受野结构与功能</span></h2><p><span style="color:purple"><strong>感受野（Receptive Field）是指在一个神经系统中，某个特定神经元的输出活动所依赖的输入空间中那一局部区域的集合，只有该区域的刺激能够影响该神经元的反应。（你可以将感受野理解为函数是否执行的前置判断条件）。</strong></span>神经节细胞的感受野一般是圆形，有中心和周边两部分，分为两类：给光中心型（on-center）与撤光中心型（off-center）。前者在中心受光时兴奋（放电增加），周边受光时抑制（放电减少）；后者则相反，中心受光抑制，周边受光兴奋。LGN细胞的感受野结构与视网膜神经节细胞相似，也有给光中心型与撤光中心型，并呈现中心-周边拮抗响应。它们负责将视觉信息从视网膜传递到大脑皮层，保留了视网膜的感受野特性。感受野的大小范围从中央凹的0.01mm到周边视网膜的&gt;1mm，感受野越小，空间分辨率越高，因此在黄斑区域视觉最为敏锐。<br><br>视网膜神经节细胞及其在LGN中的对应细胞可进一步分为两类通路：P通路与M通路。P通路源自视网膜的P型神经节细胞，具有感受野小、空间分辨率高、对颜色敏感等特征，主要处理细节和颜色信息；M通路则源自M型神经节细胞，感受野较大、传导速度快、对运动和闪烁刺激更敏感，主要处理动态变化。<span style="color:purple"><strong>感受野不仅适用于视觉系统，在触觉、听觉、嗅觉甚至高级皮层中也有广泛应用</strong></span>。例如，在视觉系统中它对应视野的某一区域，在触觉中是皮肤上某一块区域，在听觉中是某个频率范围的声音，而在高级皮层中则可能响应面孔、图形组合或运动方向等复杂特征。从视网膜到视觉皮层的多层处理路径中，每一层神经元都拥有其独特的感受野，且感受野会随着处理层级上升变得更大、更抽象，体现出功能上的进化与整合。</p>
+<h2 id="神经信号的兴奋与抑制机制"><a href="#神经信号的兴奋与抑制机制" class="headerlink" title="神经信号的兴奋与抑制机制"></a><span style="color:green">神经信号的兴奋与抑制机制</span></h2><p>当一个神经元触发动作电位时，它会通过突触释放一种固定类型的神经递质，这种递质可能是兴奋性的（如谷氨酸），也可能是抑制性的（如GABA）。兴奋性递质会让下游神经元的膜电位去极化，更容易触发动作电位；抑制性递质则让膜电位超极化，更难触发动作电位。但动作电位的出现并不意味着传递的是兴奋信号，例如，<span style="color:purple"><strong>一个释放GABA的神经元即使受到强烈输入产生动作电位，释放的仍然是抑制性信号。这是因为递质的种类是由该神经元的“基因身份”决定的，与它自身的输入受体类型无关，不会因外部刺激而改变。</strong></span><br><br>然而，真正决定神经信号意义的，是下游神经元膜上的受体类型。递质只是信息载体，而受体决定它传递的是兴奋还是抑制效应。例如，谷氨酸激活AMPA&#x2F;NMDA受体会引起去极化，产生兴奋性反应；GABA激活GABAa受体则引起超极化，形成抑制作用。神经元本身并不会判断信号好坏，它只是接收、整合所有突触输入（兴奋与抑制）并在轴丘（axon hillock）完成电位整合。如果整合后的膜电位达到阈值（约-55mV），就会触发动作电位；否则不会放电。这种机制体现了时空整合 + 阈值判断的原则，<span style="color:purple"><strong>感受野决定”要不要接”，受体决定”怎么解读”，膜电位变化决定”放不放电”，而递质则传达”哪种信号情绪”</strong></span>。</p>
+<h2 id="视皮层的功能构造"><a href="#视皮层的功能构造" class="headerlink" title="视皮层的功能构造"></a><span style="color:green">视皮层的功能构造</span></h2><p><span style="color:purple"><strong>在我们大脑的视觉皮层里，很多神经元是按垂直柱状排成一组一组的</strong></span>。在大脑皮层，尤其是V1中，所谓的柱状排列是指对同一类刺激（比如：某个方向的线条、来自同一只眼的输入）有相似反应的神经元（主要是兴奋性的锥体细胞），它们从皮层的表面（第1层）一直排列到深层（第6层），垂直方向组成一根柱子，这就是功能柱（functional column）。这些组会整齐地穿过大脑皮层的整个厚度（人类大脑皮层（包括视觉皮层）厚度通常在 2 – 4 mm 范围内，平均约 2.5 mm；不同区域略有差异：感官区相对较薄（约2mm），运动区可达到4mm以上）。每个小组的神经元会处理来自视网膜某个小区域的信息，也就是说，大脑把每个小区域的信息专门交给一小群神经元处理，如图2所示。<br><img src="https://github.com/gaoxianglong/blog/blob/master/imgs/image123456.png?raw=true" alt="图2-V1区6层结构的细胞分布图"><br>V1区具有6层分层结构，每一层在接收输入、进行处理和输出信号方面承担着明确而独立的功能，如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>输入来源</th>
+<th>输出去向</th>
+<th>细胞类型</th>
+<th>主要功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第1层</td>
+<td>几乎无直接输入</td>
+<td>局部调控</td>
+<td>局部调控细胞</td>
+<td>接收来自皮层内其它层的反馈，调节活动</td>
+</tr>
+<tr>
+<td>第2&#x2F;3层</td>
+<td>接收第4层Cβ区传来的处理结果</td>
+<td>第3层向高级视觉皮层（如V2）输出</td>
+<td>复杂细胞、色斑相关细胞</td>
+<td>整合方向、颜色等高阶信息，第2层主要用于局部处理，第3层是主要外输层</td>
+</tr>
+<tr>
+<td>第4层</td>
+<td>直接接收外侧膝状体（LGN）输入</td>
+<td>向第2&#x2F;3层等上传</td>
+<td>简单细胞</td>
+<td>初步处理眼源信息，区分左右眼输入（眼优势柱核心）</td>
+</tr>
+<tr>
+<td>第5层</td>
+<td>接收来自第2&#x2F;3层或第4层的整合信息</td>
+<td>输出至脑干和上丘等深部脑结构</td>
+<td>复杂细胞</td>
+<td>参与调控眼动反射、定位快速反应路径等本能行为</td>
+</tr>
+<tr>
+<td>第6层</td>
+<td>局部回馈和长程反馈</td>
+<td>回传至LGN或调控皮层其它区域</td>
+<td>多种神经元类型</td>
+<td>调节输入信息回路，参与反馈调控</td>
+</tr>
+</tbody></table>
+<p><br>在视觉系统中，不同皮层层级的神经元承担着不同的输出任务，体现了认知加工与本能反应的分工机制。其中，<span style="color:purple"><strong>第3层的神经元将处理结果输出至高级视觉皮层区域，如V2、V3，主要用于空间整合（比简单细胞更复杂的空间结构加工与感知输出准备）、颜色识别和图形轮廓等复杂的认知加工型视觉任务</strong></span>；而第5层的输出则面向脑干和上丘，构成一条反应型下行通路，用于快速定位、眼球运动、闪避反射等不依赖意识控制的本能性视觉调控行为。<br><br>需要注意的是，上丘和脑干并不属于视觉皮层，也不位于皮层内部结构之中。它们是源自视网膜信息的另一条并行投射路径，与通向V1的主通路同时并发运行。从解剖结构上看，它们处于皮层下游，但在本能反应链条中却扮演上游控制者的角色，负责快速控制眼球运动、空间定位与头部转向等反射性行为，而非参与视觉认知加工。这种结构和功能的协同，使得视觉系统既能实现对环境的深度理解，又能保障对突发刺激的迅速反应。</p>
+<h2 id="V1的结构逻辑与信息整合机制"><a href="#V1的结构逻辑与信息整合机制" class="headerlink" title="V1的结构逻辑与信息整合机制"></a><span style="color:green">V1的结构逻辑与信息整合机制</span></h2><p>视觉信息首先从视网膜传入LGN，在LGN中分为来自左眼和右眼的独立通路，再分别投射到V1区。在V1中，不同来源的眼睛信号分别投射到不同的眼优势柱（ocular dominance column），每个柱子是垂直方向从第1层到第6层的连续神经元结构。眼优势柱彼此之间在水平方向上并不连接，属于功能独立的区域。每一个眼优势柱只偏好处理来自某一只眼的输入信号。<br><br><span style="color:purple"><strong>在眼优势柱内部嵌套有朝向柱（orientation column），这些柱子负责处理特定方向的线条信息</strong></span>。例如某些朝向柱更偏好垂直线条，另一些偏好水平或倾斜方向的线条。朝向柱之间存在“水平连接”，这种连接不是结构粘合，而是神经元之间通过轴突横向延伸所形成的突触连接。这种连接会把“方向相似”的信息彼此传递，有利于多个朝向柱整合信息，实现“线”的延展。除了朝向柱，还有“色斑”（blob）结构，主要分布在V1皮层的第2&#x2F;3层，负责处理颜色信息。色斑和朝向柱是功能独立的结构，两者互不连接。色斑自己也具有水平连接机制，但连接对象是其他色斑，主要用于颜色整合，而不是方向整合。<br><br>V1皮层除了存在垂直结构（眼优势柱、朝向柱、色斑）之外，还有明显的水平方向连接系统。这些连接主要发生在第2&#x2F;3层，延伸距离较长，可以跨越多个柱子单位。它们的功能是将“功能相似”的神经元进行远距离通信，实现从“点”到“线”再到“面”的整合过程。<span style="color:purple"><strong>整个V1的结构可以归纳为：眼优势柱之间互不相连，彼此独立并发处理来自左右眼的输入信号；朝向柱嵌套在眼优势柱中，负责识别线条方向；色斑独立存在于浅层，负责处理颜色；第2&#x2F;3层的水平连接实现了信息在空间上的整合</strong></span>。<br><br>V1的这种“垂直+水平”双重组织方式，能够在保持对每只眼输入独立处理的同时，实现空间结构的联合分析。最终目标是把来自视网膜的光点信息，整合成具有方向、边缘、轮廓与颜色特征的完整二维图像表征。这种结构保证了V1不仅能精准处理局部信息，还具备强大的模式整合能力，为高级视觉区域（如V2、V4、MT）提供了稳定的基础信息流。</p>
+<h2 id="左右眼的视差处理"><a href="#左右眼的视差处理" class="headerlink" title="左右眼的视差处理"></a><span style="color:green">左右眼的视差处理</span></h2><p>我们之所以能感知立体深度和物体在空间中的位置，核心在于大脑对左右眼视觉差异的整合处理。所谓左右眼差异，主要包括三种类型，第一是视差（binocular disparity），由于两只眼分布在不同位置（平均相距约6.5厘米），从不同角度观看同一物体会产生图像位移，这就是闭一只眼看手指、换眼后手指跳动的原因；第二是亮度与色差（intensity&#x2F;color disparity），光线入射角度不同会导致两眼对同一物体的亮度和颜色感知略有差异，比如阳光斜射时，两眼看到的阴影不同；第三是边缘方向差异（orientation or contour difference），当观察斜放的立体物体时，两眼中看到的边缘方向可能有所不同。<br><br>这些微小差异，是人脑进行空间判断与立体知觉计算的关键线索。视觉系统对这些差异的处理过程具有明显的层次性，在视网膜和LGN阶段，左右眼的信息是分开处理的，彼此独立、没有融合；<span style="color:purple"><strong>而在初级视觉皮层V1中，神经系统首次将来自双眼的信号输入到同一个神经元中（比如：双眼型简单细胞），开始对图像间的差异进行神经层面的整合。这种整合产生了我们对空间深度、立体感、边缘方向等的感知能力</strong></span>。<br><br>更高级的视觉整合还涉及V2、V4、MT&#x2F;V5等脑区，它们协同处理方向、颜色、运动等图像特征。同时，胼胝体作为连接左右大脑半球的神经通路，确保左右V1之间的视觉信息能实现跨脑整合，使我们最终在意识中感知到的是一个连续、统一的三维视觉世界。</p>
+<h2 id="眼优势柱"><a href="#眼优势柱" class="headerlink" title="眼优势柱"></a><span style="color:green">眼优势柱</span></h2><p>所谓眼优势柱中的眼，指的是每一根柱状结构内的神经元，都更偏好来自左眼或右眼的输入。这些柱子是垂直排列的功能单元，从皮层的第1层一直延伸到底层，第4层接受LGN输入，第3层、第5层等则进行信息加工或输出。<br>每根柱子里包含了不同类型的神经元，比如：</p>
+<ul>
+<li><strong>锥体细胞（pyramidal cell）</strong>：主要负责输出信息，常在3、5、6层，有长轴突，信息可以传到很远的地方，是主要的输出细胞。</li>
+<li><strong>星形细胞（stellate cell）</strong>：多在第4层，局部连接细胞，轴突分支短，信息传导范围小，主要是内部加工。<br>它们都属于响应某一只眼的那根柱子，也就是具有相同眼优势的神经元聚集在一起，垂直排列，功能一致。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">↑ 垂直方向（6层）</span><br><span class="line">│</span><br><span class="line">│  左眼柱       右眼柱       左眼柱       右眼柱</span><br><span class="line">│  ┌──────┐   ┌──────┐   ┌──────┐   ┌──────┐</span><br><span class="line">│  │      │   │      │   │      │   │      │   ← 柱状：从1层到底层，垂直排列</span><br><span class="line">│  │      │   │      │   │      │   │      │</span><br><span class="line">│  │      │   │      │   │      │   │      │</span><br><span class="line">└────────────────────────────────────→ 水平方向分布出“条纹”</span><br></pre></td></tr></table></figure>
+<p>在V1中，从表层到深层垂直排列着许多柱状结构，每根柱子中的神经元对某只眼有偏好，左眼柱和右眼柱在皮层表面呈条纹状交替分布，但每根柱本身是垂直结构，功能一致。在初级视觉皮层中，眼优势柱是垂直排列的功能柱，响应同一只眼的输入。左眼柱和右眼柱在皮层表面交替分布，从水平方向看，呈现出条纹或波纹状的图案；但本质上它们是垂直穿过皮层六层的柱状结构。<span style="color:purple"><strong>眼优势柱不是只接一只眼的信号，而是对一只眼更敏感。另一只眼的信息能传进来，也会被处理，只是反应较弱</strong></span>。</p>
+<h2 id="朝向柱"><a href="#朝向柱" class="headerlink" title="朝向柱"></a><span style="color:green">朝向柱</span></h2><p>视觉皮层中的神经元不仅对眼睛来源有偏好，还对物体的朝向有偏好。在猫的大脑皮层中，研究人员用电极记录不同位置神经元最喜欢的线条方向，比如某个神经元对45°倾斜的线条最敏感。沿着皮层表面移动电极，记录会逐渐发生规律性变化，说明视觉皮层存在朝向柱结构。<br><br>朝向柱是在皮层上按一定方向排列的细胞群，每个柱子对不同方向的线条最敏感。每个朝向柱嵌套在某个眼优势柱里，它们共同决定一个神经元最喜欢来自哪只眼+看到什么方向的东西。这两种偏好叠加，决定了神经元的强反应模式。也就是说，某个神经元既更喜欢左眼输入，又喜欢45度方向的线条。所以当你同时给它左眼 + 斜着的线条，就会引起最强烈的反应。<span style="color:purple"><strong>朝向柱（orientation column）是嵌套在眼优势柱（ocular dominance column）内部的结构，两者都是沿着大脑皮层六层结构垂直延伸的功能柱状单元。它们之间的组织关系是，一个眼优势柱包含多个朝向柱</strong></span>。</p>
+<h2 id="眼优势柱和朝向柱在V1中的分布"><a href="#眼优势柱和朝向柱在V1中的分布" class="headerlink" title="眼优势柱和朝向柱在V1中的分布"></a><span style="color:green">眼优势柱和朝向柱在V1中的分布</span></h2><p>在初级视觉皮层（V1）中，眼优势柱（ocular dominance columns）和朝向柱（orientation columns）是两类关键的功能结构，它们以垂直方式贯穿整个六层皮层，共同构成大脑早期视觉信息加工的核心架构。二者分别处理不同维度的信息，眼优势柱偏好来自某一只眼的输入，朝向柱则对特定方向的线条刺激更为敏感。两者在皮层中紧密交织、结构重叠，但在不同层级中分布着不同类型的神经元，并承担着不同的加工任务。<br><br>眼优势柱的结构特点主要体现在第4层（特别是4Cβ层），该层中大量的简单细胞（simple cells）对某只眼输入具有偏好性，执行左右眼信号的初步分离，是双眼整合的基础来源。虽然其功能分化主要集中于第4层，但它作为柱状结构实际上是从第1层垂直贯穿至第6层，在第2&#x2F;3层和第5&#x2F;6层也分布有复杂细胞（complex cells），用于维持眼来源信息在整个柱结构中的一致性，确保眼偏好在多层次处理中连续保留。相较之下，朝向柱的关键加工集中在第2&#x2F;3层和第5&#x2F;6层，这些层分布的复杂细胞擅长整合方向、边缘、运动等高阶视觉特征，实现对刺激方向的不变性识别。同时，朝向柱在第4层也包含部分方向敏感的简单细胞，参与初步的方向选择性提取。可以说，眼优势柱侧重于输入来源的空间通道整合，而朝向柱则侧重于刺激特征的方向选择与感知抽象，二者通过六层皮层中不同类型神经元的功能分工，协同完成早期视觉信号的分析与编码。<br><br>当一个视觉刺激同时符合某一朝向柱的方向偏好，并来自该柱所在眼优势柱所偏好的眼睛时，相关神经元会表现出更强的放电反应。这种结构上的垂直交叠与功能上的高度协同，使得V1具备了高效整合空间、方向和眼源等多维视觉信息的能力。最终，V1通过规则排列的眼优势柱、朝向柱以及色斑（blobs）构建起被称为超柱（hypercolumn）的功能单元，在每一个位置上同步整合眼来源、方向选择性和颜色感知三类核心特征，为更高层次的视觉任务（如空间定位、物体识别与双眼融合）打下坚实的神经基础。</p>
+<h2 id="色觉细胞集群（色斑）"><a href="#色觉细胞集群（色斑）" class="headerlink" title="色觉细胞集群（色斑）"></a><span style="color:green">色觉细胞集群（色斑）</span></h2><p>除了方向和眼睛偏好外，视觉皮层还有专门处理颜色信息的区域，称为色斑（blob）。这些细胞对不同颜色（红绿蓝等）有强烈反应。色斑（blob）不是像眼优势柱或朝向柱那样的完整柱状结构，它主要是局限在V1区的第2&#x2F;3层，并没有明显地贯穿整个六层皮层。朝向柱和色斑是在眼优势柱结构范围内被内嵌的功能模块，但它们的功能上各自独立，是并列存在的处理系统。</p>
+<h2 id="跨脑区整合的胼胝体"><a href="#跨脑区整合的胼胝体" class="headerlink" title="跨脑区整合的胼胝体"></a><span style="color:green">跨脑区整合的胼胝体</span></h2><p>大脑的左右半球在处理视觉信息时具有明确的分工机制。视觉信号在进入大脑后，首先经过视交叉（optic chiasm）实现初步分流。来自左侧视野的信息无论由哪只眼睛接收，都会被传导至右侧大脑半球；而来自右侧视野的信息则被传导至左侧大脑半球。这一分配模式是通过视交叉处的神经纤维交叉实现的，鼻侧视网膜的轴突交叉进入对侧大脑，颞侧视网膜的轴突则保留在同侧。该结构确保了视野而非眼球本身决定信息投射路径。虽然左右大脑分别处理来自对侧视野的信息，但<span style="color:purple"><strong>为了形成一个连续、无缝整合的视觉体验，左右视觉皮层必须保持同步，这一整合作用由胼胝体（corpus callosum）完成。如图3所示，胼胝体是一条横跨左右大脑半球的大型神经纤维通路，它不属于视觉皮层，它将左侧和右侧的初级视觉皮层（V1）区域中的同源神经元彼此连接，承担视觉信息的横向同步功能</strong></span>。通过这种连接机制，左右V1区域能够实时交换加工结果，实现对双侧图像的同步和对接。<br><img src="https://github.com/gaoxianglong/blog/blob/master/imgs/Gray733.png?raw=true" alt="图3-胼胝体俯视图"><br>胼胝体并不参与图像的初级解码或复杂特征分析，它不处理视差、亮度、颜色或边缘方向等图像属性。这些功能由V1内部的双眼型神经元完成，它们负责对来自双眼的物理差异进行神经整合。<span style="color:purple"><strong>胼胝体的职责是在此基础上，将左右半脑各自处理后的图像信息在皮层层面对齐整合，从而使大脑能够形成一个统一、连续的视觉世界</strong></span>。整个视觉信息的传递流程包括：视网膜采集光信号，经视神经传入大脑，在视交叉处完成左右视野的分流，再分别投射至对侧的V1区。随后，胼胝体实现左右V1之间的信息交互，完成图像的最终拼接与主观上的统一感知。这一结构体系使得人类能够稳定地感受到一个连续、完整的视觉场景。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">gao_xianglong</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://gaoxianglong.github.io/2025/06/03/%E4%B8%BA%E5%95%A5%E8%92%99%E5%A8%9C%E4%B8%BD%E8%8E%8E%E8%AE%A9LLM%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB/">https://gaoxianglong.github.io/2025/06/03/%E4%B8%BA%E5%95%A5%E8%92%99%E5%A8%9C%E4%B8%BD%E8%8E%8E%E8%AE%A9LLM%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">gao_xianglong</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%A5%9E%E7%BB%8F%E5%85%83/">
+                                    <span class="chip bg-color">神经元</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%A7%86%E7%BD%91%E8%86%9C/">
+                                    <span class="chip bg-color">视网膜</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                                    <span class="chip bg-color">神经网络</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2025/07/13/%E4%BF%A1%E5%8F%B7%E8%BD%AC%E5%AF%BC%E4%B8%AD%E7%A6%BB%E5%AD%90%E9%80%9A%E9%81%93%E7%9A%84%E7%BB%93%E6%9E%84%E4%B8%8E%E5%8A%9F%E8%83%BD%E4%BD%9C%E7%94%A8/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="信号转导中离子通道的结构与功能作用">
+                        
+                        <span class="card-title">信号转导中离子通道的结构与功能作用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-07-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%94%9F%E7%89%A9%E5%AD%A6/" class="post-category">
+                                    神经生物学
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E5%85%83/">
+                        <span class="chip bg-color">神经元</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%A7%86%E7%BD%91%E8%86%9C/">
+                        <span class="chip bg-color">视网膜</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">神经网络</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A6%BB%E5%AD%90%E9%80%9A%E9%81%93/">
+                        <span class="chip bg-color">离子通道</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/05/28/%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E4%BF%A1%E5%8F%B7%E6%95%B4%E5%90%88%E4%B8%8E%E8%AF%AD%E4%B9%89%E8%BD%AC%E6%8D%A2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="神经元的信号整合与语义转换">
+                        
+                        <span class="card-title">神经元的信号整合与语义转换</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-05-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%94%9F%E7%89%A9%E5%AD%A6/" class="post-category">
+                                    神经生物学
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E5%85%83/">
+                        <span class="chip bg-color">神经元</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">神经网络</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E9%80%92%E8%B4%A8/">
+                        <span class="chip bg-color">神经递质</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BF%A1%E5%8F%B7%E6%95%B4%E5%90%88/">
+                        <span class="chip bg-color">信号整合</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('50')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: GXLverse<br />'
+            + 'Author: gao_xianglong<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            <a href="/about" target="_blank">gao_xianglong</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
+                        class="white-color">39.2k</span>
+            
+            
+            
+            
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/gaoxianglong" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:gao_xianglong@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,1130 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="神经元之间的信号传导, GXLverse">
+    <meta name="description" content="
+突触的结构与信号传导神经元之间的信号传导依赖于一个高度精密的物理接口——突触（Synapse）。典型的突触结构由突触前膜、突触间隙和突触后膜3部分构成。其中，突触前膜实际上是上一个神经元的轴突末梢膜，负责储存并释放神经递质；突触间隙是连接">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>神经元之间的信号传导 | GXLverse</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">GXLverse</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">GXLverse</div>
+        <div class="logo-desc">
+            
+            「同程旅行」技术总监，前「支付宝」高级技术专家，GIAC、ArchSummit峰会讲师，著有畅销书《超大流量分布式系统架构解决方案》、《人人都是架构师》、《Java虚拟机精讲》。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/gaoxianglong" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/gaoxianglong" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">神经元之间的信号传导</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%A5%9E%E7%BB%8F%E5%85%83/">
+                                <span class="chip bg-color">神经元</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                                <span class="chip bg-color">神经网络</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%A5%9E%E7%BB%8F%E9%80%92%E8%B4%A8/">
+                                <span class="chip bg-color">神经递质</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%94%9F%E7%89%A9%E5%AD%A6/" class="post-category">
+                                神经生物学
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2025-05-21
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    3.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    11 Min
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><img src="https://github.com/gaoxianglong/blog/blob/master/imgs/%E6%88%AA%E5%B1%8F2025-05-21%2017.03.52.png?raw=true"></p>
+<h2 id="突触的结构与信号传导"><a href="#突触的结构与信号传导" class="headerlink" title="突触的结构与信号传导"></a><span style="color:green">突触的结构与信号传导</span></h2><p>神经元之间的信号传导依赖于一个高度精密的物理接口——突触（Synapse）。典型的突触结构由<span style="color:purple"><strong>突触前膜、突触间隙</strong></span>和<span style="color:purple"><strong>突触后膜</strong></span>3部分构成。其中，突触前膜实际上是上一个神经元的轴突末梢膜，负责储存并释放神经递质；突触间隙是连接两个神经元之间的微小空间，神经递质会在其中扩散；突触后膜则位于下一个神经元的树突膜上，表面分布着高度特异性的受体（Receptor），专门用于识别和接收这些神经递质。<br><br>在神经元内部的电传导过程中，当动作电位到达突触前膜时，会触发钙离子通道开放，钙离子（Ca²⁺）流入细胞内。钙离子的内流是一个关键信号，它促使突触前膜内的突触小泡（Synaptic Vesicles）与细胞膜融合。随后，<span style="color:purple"><strong>储存在突触小泡中的神经递质分子被释放到突触间隙中，并迅速扩散至突触后膜，与受体结合，引发突触后神经元的电位变化，进而可能触发新的动作电位，完成信号在神经元之间的传导</strong></span>。这一过程构成了从”电信号 → 化学信号 → 电信号”的完整转换链，是神经系统高效运作的基础机制。此外，突触不仅是信号传导的关键节点，也常常是多种药物的作用靶点，许多神经系统相关的治疗手段正是基于对突触机制的精准调控。<br><img src="https://github.com/gaoxianglong/blog/blob/master/imgs/%E6%88%AA%E5%B1%8F2025-05-21%2016.51.13.png?raw=true" alt="图1-典型突触结构&amp;神经递质"><br>神经元之间的信号传导方式主要包括2种：<span style="color:purple"><strong>化学突触（Chemical Synapse）和电突触（Electrical Synapse）</strong></span>。其中，化学突触是最常见的传导形式，占据了神经系统中超过 99% 的突触类型。在这种方式中，突触前神经元通过释放神经递质，将信号以化学形式传递给突触后神经元，是我们在感知、运动、情绪等大多数神经活动中所依赖的基本机制。<br><br>相比之下，<span style="color:purple"><strong>电突触在哺乳动物中极为罕见，仅存在于某些对传递速度要求极高的特殊神经回路中，主要分布于脑干、视网膜等区域</strong></span>。在这类电突触中，两个神经元之间通过缝隙连接（gap junction）直接传递电流，无需神经递质介导，因此传导速度更快，但调控能力较弱。这类结构常见于无脊椎动物的神经系统，在人类等哺乳动物中则参与如：<span style="color:purple"><strong>眨眼反射、惊跳反射、平衡调节、快速眼动(REM)</strong></span>等快速、同步性强的反应通路。电突触与化学突触协同构成了神经系统内部高效而精密的信息传导网络。</p>
+<h2 id="神经递质的类型"><a href="#神经递质的类型" class="headerlink" title="神经递质的类型"></a><span style="color:green">神经递质的类型</span></h2><p><span style="color:purple"><strong>在神经系统中，神经递质是神经元之间进行信息传递的关键化学递质</strong></span>。根据它们对突触后神经元产生的效应，通常可以分为2大类：<span style="color:purple"><strong>兴奋性神经递质</strong></span>和<span style="color:purple"><strong>抑制性神经递质</strong></span>。<br><br><span style="color:purple"><strong>中枢神经系统中最主要的兴奋性神经递质是谷氨酸（Glutamate），它在大脑中广泛分布，参与学习、记忆等多种高级认知功能</strong></span>。除了谷氨酸外，一些具有调节功能的神经递质如：去甲肾上腺素和多巴胺，也可在特定通路中产生兴奋效应，主要用于调控注意力、动机与奖赏等神经功能。<br><br><strong>常见兴奋性神经递质</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>神经递质分子</th>
+<th>作用类型</th>
+<th>主要受体</th>
+<th>分布与功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>兴奋性</td>
+<td>谷氨酸 Glutamate</td>
+<td>兴奋</td>
+<td>AMPA, NMDA, kainate</td>
+<td>中枢神经系统最主要的兴奋性递质</td>
+</tr>
+<tr>
+<td>兴奋性</td>
+<td>乙酰胆碱 ACh</td>
+<td>兴奋或抑制</td>
+<td>烟碱型（兴奋）, 毒蕈型（抑制）</td>
+<td>在神经肌肉接头处负责兴奋传导</td>
+</tr>
+<tr>
+<td>兴奋性</td>
+<td>去甲肾上腺素 NE</td>
+<td>主调制</td>
+<td>α、β肾上腺素受体</td>
+<td>注意力、唤醒、应激</td>
+</tr>
+<tr>
+<td>兴奋性</td>
+<td>多巴胺 DA</td>
+<td>主调制</td>
+<td>D1-D5 受体</td>
+<td>奖赏、运动、精神调节</td>
+</tr>
+</tbody></table>
+<p><br>与之相对，抑制性神经递质会使突触后膜发生复极化，即膜电位变得更加负，从而降低神经元触发动作电位的可能性。它们通常通过开放氯离子（Cl⁻）通道或促进钾离子（K⁺）外流来实现抑制效果。<span style="color:purple"><strong>典型的抑制性神经递质包括GABA（γ-氨基丁酸），它是中枢神经系统中最主要的抑制性递质，负责调控整体神经兴奋性</strong></span>；还有甘氨酸（Glycine），主要存在于脊髓和脑干，参与运动反射和感觉信号的调控。<br><br><strong>常见抑制性神经递质</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>神经递质分子</th>
+<th>作用类型</th>
+<th>主要受体</th>
+<th>分布与功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>抑制性</td>
+<td>GABA</td>
+<td>抑制</td>
+<td>GABA-A（Cl⁻通道）, GABA-B（代谢型）</td>
+<td>中枢神经系统主要抑制性递质</td>
+</tr>
+<tr>
+<td>抑制性</td>
+<td>甘氨酸 Glycine</td>
+<td>抑制</td>
+<td>GlyR（Cl⁻通道）</td>
+<td>脊髓和脑干中的主要抑制递质</td>
+</tr>
+</tbody></table>
+<h2 id="不同类型的神经递质的作用"><a href="#不同类型的神经递质的作用" class="headerlink" title="不同类型的神经递质的作用"></a><span style="color:green">不同类型的神经递质的作用</span></h2><p>在典型的神经信号传导过程中，动作电位并不是由突触前神经元直接”传过去”的电信号触发，而是依赖于神经递质。这个过程的关键在于：<span style="color:purple"><strong>突触前神经元释放的神经递质类型决定了突触后膜的电位变化方向，从而影响动作电位是否能够被触发</strong></span>。当一个神经元接收到兴奋性神经递质（如：谷氨酸）时，这些递质会与突触后膜上的配体门控阳离子通道结合，导致 Na⁺ 或 Ca²⁺ 等阳离子流入，从而引发局部膜电位的去极化，即形成兴奋性突触后电位（EPSP）。但这种电位变化是局部且被动的，它会以衰减的方式向轴丘扩散，而不会立即引发动作电位。轴丘是神经元的”决策中枢”，密布着大量的电压门控型钠通道，只有当电差累计到阈值电位（通常约为 -55 mV）时，这些钠通道才会被激活，引发大量 Na⁺ 内流，从而产生一个完整的动作电位（<span style="color:purple"><strong>从阈值电位（通常为 –55 mV）迅速上升到正值（约 +30 mV），再通过复极化与超极化过程回落到静息电位（约 –70 mV）的完整电位变化过程</strong></span>）。动作电位一旦启动，就会以”全或无”的方式沿轴突传导至突触末梢。<br><br>需要注意的是，<span style="color:purple"><strong>这个放电之后的膜电位恢复过程（复极化），会导致钾离子（K⁺）外流，但它并不是由抑制性神经递质引起的。相反，这一阶段是由神经元自身的电压门控 K⁺ 通道介导的主动恢复机制，与突触传递无关</strong></span>。 <br><br>那么抑制性神经递质起什么作用呢？实际上，在一个活跃的神经网络中，兴奋性和抑制性神经递质是并行工作的，它们在同一个神经网络中协同调控信号传递。不是互相排斥，而是实时博弈、动态平衡，共同决定一个神经元是否放电。<span style="color:purple"><strong>如果没有抑制机制，过度放电，结果可能是生物癫痫、过度紧张、焦虑、甚至死亡</strong></span>。</p>
+<h2 id="视网膜中的神经递质分工"><a href="#视网膜中的神经递质分工" class="headerlink" title="视网膜中的神经递质分工"></a><span style="color:green">视网膜中的神经递质分工</span></h2><p>在视网膜的神经传导路径中，不同类型的神经元通过特定的神经递质完成信号传递，<span style="color:purple"><strong>其中最核心的递质是谷氨酸（Glutamate）和GABA（γ-氨基丁酸），它们在不同连接环节中扮演着兴奋或抑制的角色</strong></span>。<br><br>在视网膜中，感光细胞始终释放谷氨酸，只是释放量会随着光照条件变化而不同——在黑暗中释放较多，光照下释放减少。不过，<span style="color:purple"><strong>谷氨酸虽然本质上是兴奋性神经递质，它在突触后神经元中引发的是兴奋还是抑制反应，并不取决于它自身的“属性”，而是取决于突触后膜上受体的类型</strong></span>。也正是因为不同类型的双极细胞对谷氨酸的响应机制不同，它们才能在光暗变化中传递出完全相反的视觉信号。<br><img src="https://github.com/gaoxianglong/blog/blob/master/imgs/640.jpeg?raw=true" alt="图2-中心-周边对照感受野（center-surround receptive field）机制"><br>如图2所示，ON型双极细胞带有一种叫做 mGluR6 的代谢型谷氨酸受体，这种受体对谷氨酸的作用是抑制性的。在黑暗状态下，感光细胞会持续释放大量谷氨酸，与 mGluR6 受体结合，导致 ON 型细胞产生超极化反应，进入沉默状态。而当光照出现时，感光细胞因膜电位超极化而减少谷氨酸释放，mGluR6 失去激活，ON型细胞被解除抑制，膜电位去极化，从而被激活，开始传递”亮”的信号。与此相反，OFF型双极细胞带有的是 AMPA 和 kainate 这类离子型兴奋性受体。在黑暗中，谷氨酸大量释放，激活这些受体，使 OFF 型细胞去极化并被激活；而在光照条件下，谷氨酸减少，受体失去激活，细胞去极化中断，进入”静默”状态，从而传递“暗”的信息。<span style="color:purple"><strong>简而言之，ON型双极细胞在光照下被激活，用来传递”亮”；OFF型双极细胞在黑暗中被激活，用来传递“暗”。两者所接收的都是谷氨酸，但因受体机制不同，在视觉通路中实现了对光暗变化的分流与对照编码</strong></span>。<br><br>接着，双极细胞会把信号传给下一层的神经节细胞。它们之间也通过谷氨酸来传递，这是一种典型的”兴奋性连接”——谷氨酸会激活神经节细胞上的受体（比如 AMPA 和 NMDA），让神经节细胞产生动作电位，把信号一路往上传，最终通过视神经送到大脑皮层，形成我们看到的图像。<br><br>除了这条主干路径之外，视网膜还有两类非常重要的”调节型”细胞，分别是水平细胞和无轴突细胞。它们虽然不直接传送视觉主信号，但起到”调节和优化”的作用，类似图像处理器。<span style="color:purple"><strong>它们会释放像 GABA 或甘氨酸这样的抑制性神经递质，来抑制周围神经元的活动，使视觉信号更加清晰</strong></span>。具体来说，水平细胞负责对感光细胞的输出进行“外圈抑制”，让图像边缘更明显；而无轴突细胞则调节双极细胞和神经节细胞之间的信号传递，对亮度变化、运动方向、时间等进行精细处理。<br><br>所以说，视网膜远不只是一个简单的”感光幕布”，它其实是一个复杂且高效的图像预处理系统，依靠精细的神经递质分工和兴奋—抑制平衡，让我们得以清晰、稳定、快速地看见这个世界。</p>
+<h2 id="再摄取泵-Reuptake-transporter"><a href="#再摄取泵-Reuptake-transporter" class="headerlink" title="再摄取泵(Reuptake transporter)"></a><span style="color:green">再摄取泵(Reuptake transporter)</span></h2><p>在神经信号传递过程中，神经递质从突触前神经元释放到突触间隙，与突触后膜上的受体结合，引发电生理反应，完成信息的传递。然而，这些递质并不会在受体结合后立刻”消失”或”被用光”。实际上，<span style="color:purple"><strong>每次释放都是成千上万的递质分子同时释放，但突触后膜上的受体数量有限，只有部分递质会被绑定并激活受体，其余则短暂滞留在突触间隙中；更重要的是，即使成功激活受体的神经递质，也会很快脱离并重新游离到突触间隙中</strong></span>。如果这些残留的递质没有被及时清除，就可能不断重复刺激突触后膜，引发持续、异常的神经兴奋，干扰下一次信号传递，甚至导致系统性功能紊乱。<br><br>为了解决这个问题，神经系统配备了一个关键机制：再摄取泵。它是一种位于突触前膜上的特殊蛋白质，<span style="color:purple"><strong>负责将多余的神经递质主动”吸回”突触前神经元的胞质内，从而终止当前信号传递，维持突触清洁，防止”信号残留”带来的干扰</strong></span>。摄取不仅能快速清除作用完毕的神经递质，还能将其循环利用。被回收的递质有的会被重新装入突触小泡，准备下一轮释放，有的则被降解并重新合成。这大大降低了神经元的能量负担，同时提升了信号传递效率。<br><br>这种机制对多种神经递质系统都至关重要，尤其是血清素（5-HT）、多巴胺、去甲肾上腺素和 GABA 等。例如，治疗抑郁症的 SSRI 类药物（选择性血清素再摄取抑制剂）就是通过阻断血清素的再摄取泵，延长其在突触间的作用时间，从而增强神经信号强度，改善情绪状态。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">gao_xianglong</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://gaoxianglong.github.io/2025/05/21/%E7%A5%9E%E7%BB%8F%E5%85%83%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BF%A1%E5%8F%B7%E4%BC%A0%E5%AF%BC/">https://gaoxianglong.github.io/2025/05/21/%E7%A5%9E%E7%BB%8F%E5%85%83%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BF%A1%E5%8F%B7%E4%BC%A0%E5%AF%BC/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">gao_xianglong</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%A5%9E%E7%BB%8F%E5%85%83/">
+                                    <span class="chip bg-color">神经元</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                                    <span class="chip bg-color">神经网络</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%A5%9E%E7%BB%8F%E9%80%92%E8%B4%A8/">
+                                    <span class="chip bg-color">神经递质</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2025/05/28/%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E4%BF%A1%E5%8F%B7%E6%95%B4%E5%90%88%E4%B8%8E%E8%AF%AD%E4%B9%89%E8%BD%AC%E6%8D%A2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="神经元的信号整合与语义转换">
+                        
+                        <span class="card-title">神经元的信号整合与语义转换</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-05-28
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%94%9F%E7%89%A9%E5%AD%A6/" class="post-category">
+                                    神经生物学
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E5%85%83/">
+                        <span class="chip bg-color">神经元</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">神经网络</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E9%80%92%E8%B4%A8/">
+                        <span class="chip bg-color">神经递质</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BF%A1%E5%8F%B7%E6%95%B4%E5%90%88/">
+                        <span class="chip bg-color">信号整合</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/05/15/%E7%A5%9E%E7%BB%8F%E5%85%83%E5%86%85%E9%83%A8%E7%9A%84%E7%94%B5%E4%BF%A1%E5%8F%B7%E4%BC%A0%E5%AF%BC/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="神经元内部的电信号传导">
+                        
+                        <span class="card-title">神经元内部的电信号传导</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-05-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%94%9F%E7%89%A9%E5%AD%A6/" class="post-category">
+                                    神经生物学
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E5%85%83/">
+                        <span class="chip bg-color">神经元</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">神经网络</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BF%A1%E5%8F%B7%E4%BC%A0%E5%AF%BC/">
+                        <span class="chip bg-color">信号传导</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('50')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: GXLverse<br />'
+            + 'Author: gao_xianglong<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            <a href="/about" target="_blank">gao_xianglong</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
+                        class="white-color">39.2k</span>
+            
+            
+            
+            
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/gaoxianglong" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:gao_xianglong@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
